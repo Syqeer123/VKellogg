@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.navbar{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: brown;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar h1{
+    color: rgb(255, 207, 164);
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(255, 207, 164);
+}
+
+.container{
+    width: 100%;
+    padding-top: 50px;
+    background-color: brown;
+    padding-bottom: 130px;
+    color: rgb(255, 207, 164);
+}
+
+.titleCon{
+    margin-top: 35px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Added animation */
+    animation: fadeInDown 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+/* Stagger animation for the second title */
+.container > .titleCon:nth-of-type(2) {
+    animation-delay: 0.6s;
+}
+
+.title{
+    font-size: xxx-large;
+}
+
+.line{
+    margin-top: 10px;
+    width: 7%;
+    height: 2px;
+    border: 3px solid rgb(255, 207, 164);
+    border-radius: 20px;
+    background-color: rgb(255, 207, 164);
+}
+
+.confood{
+    display: flex;
+    width: 100%;
+    margin-top: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.food{
+    display: flex;
+    border: 2px solid rgb(254, 204, 159);
+    border-radius: 20px;
+    background-color: rgb(255, 207, 164);
+    box-shadow: -15px -15px 15px rgba(255,255,255,0.2), 15px 15px 15px rgba(0,0,0,0.1);
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 35px;
+    width: 30%;
+    max-width: 400px;
+    min-width: 300px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    /* Added animation */
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Staggered animation for food items in the first section */
+.container > .confood:nth-of-type(1) .food:nth-child(1) { animation-delay: 0.2s; }
+.container > .confood:nth-of-type(1) .food:nth-child(2) { animation-delay: 0.4s; }
+.container > .confood:nth-of-type(1) .food:nth-child(3) { animation-delay: 0.6s; }
+
+/* Staggered animation for food items in the second section */
+.container > .confood:nth-of-type(2) .food:nth-child(1) { animation-delay: 0.8s; }
+.container > .confood:nth-of-type(2) .food:nth-child(2) { animation-delay: 1.0s; }
+.container > .confood:nth-of-type(2) .food:nth-child(3) { animation-delay: 1.2s; }
+
+.food:hover {
+    transform: translateY(-10px);
+    box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.2), 15px 25px 25px rgba(0, 0, 0, 0.2);
+}
+
+img{
+    width: 50%;
+    min-height: 250px;
+    padding-top: 20px;
+    object-fit: contain;
+}
+
+.desc{
+    margin: 0px 25px 0px 25px;
+}
+
+.desc h1{
+    color: brown;
+}
+
+.desc p{
+    margin-top: 10px;
+    color: #5C2B1E;
+}
+
+.bottom{
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(39, 39, 39);
+    overflow-y: hidden;
+}
+
+.bottom .insides{
+    font-size: small;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    color: brown;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+

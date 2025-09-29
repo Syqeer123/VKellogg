@@ -1,0 +1,60 @@
+body {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+body.fade-in {
+    opacity: 1;
+}
+
+body.fade-out {
+    opacity: 0;
+}
+
+
+.navbar a {
+    position: relative;
+    padding-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(255, 207, 164);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.navbar a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.navbar a:hover {
+   color: #ffffff;
+}
+
+.navbar .Logo {
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar .Logo:hover {
+    transform: scale(1.05);
+}
+
+
+button {
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #A52A2A; 
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
